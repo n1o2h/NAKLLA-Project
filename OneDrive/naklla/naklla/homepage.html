@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Selector</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --Dbrand: #ffffff; /* White header color */
+      --brand: #0093ff; 
+      --Fbrand: #0093ff;
+      --Sbrand: #78c7ff;
+      --Tbrand: #cae9ff;
+      --nuture: #ecf0f4;
+      --dark: #141416;
+      --text-color: #000000; /* Black text color */
+      --hover-color: #87CEEB; /* Light blue hover color */
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: var(--nuture);
+      color: var(--text-color); /* Black text color */
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; 
+      padding: 10px;
+      background-color: var(--Dbrand); /* White header color */
+      color: var(--text-color); /* Black text color */
+    }
+
+    .logo {
+      max-width: 80px; /* Adjust the maximum width as needed */
+      margin-left: 20px;
+    }
+
+    .right-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .language-selector,
+    .user-menu,
+    .menu-icon {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      margin-right: 20px;
+      font-size: 20px;
+      color: var(--text-color); /* Black text color */
+    }
+
+    .language-selector:hover,
+    .user-menu:hover,
+    .menu-icon:hover {
+      color: var(--hover-color); /* Light blue hover color */
+    }
+
+    .language-selector span {
+      margin-right: 5px;
+    }
+
+    .menu-icon span {
+      display: block;
+      width: 20px;
+      height: 3px;
+      background-color: var(--text-color); /* Black menu icon bars color */
+      margin-bottom: 5px;
+    }
+
+    .menu-icon:hover span {
+      background-color: var(--hover-color); /* Light blue hover color */
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 0; 
+      border: 1px solid var(--Sbrand);
+      border-radius: 5px;
+      background-color: var(--Tbrand);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      padding: 5px 0;
+      min-width: 150px; 
+    }
+
+    .dropdown-menu div {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none; 
+    }
+
+    .dropdown-menu div:hover {
+      background-color: var(--Sbrand);
+      color: var(--text-color); /* Black text color */
+    }
+
+    .slideshow-container {
+      width: 100%; /* Adjust to take the full width of the page */
+      max-width: 1200px; /* Set a maximum width for the slideshow */
+      height: 70vh;
+      overflow: hidden;
+      margin: 20px auto;
+      position: relative;
+      border: 2px solid var(--Sbrand);
+    }
+
+    .slideshow {
+      display: flex;
+      transition: transform 1s ease-in-out;
+      width: 400%; /* Ensure all images fit side by side */
+    }
+
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the image covers the entire container */
+      vertical-align: middle;
+      opacity: 0;
+    }
+
+    .footer {
+      background-color: var(--Dbrand);
+      color: var(--text-color); /* Black text color */
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--text-color); /* Black text color */
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+      color: var(--hover-color); /* Light blue hover color */
+    }
+
+    .footer span {
+      color: var(--hover-color); /* Light blue hover color */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" style="max-width: 100%;">
+    </div>
+
+    <div class="right-section">
+      <div class="language-selector" onclick="toggleDropdown('language-dropdown')">
+        <span class="fas fa-globe"></span>
+        <span id="selected-language">Fr</span>
+        <div class="dropdown-menu" id="language-dropdown">
+          <div onclick="selectLanguage('Fr')">Fr</div>
+          <div onclick="selectLanguage('En')">En</div>
+          <div onclick="selectLanguage('Es')">Es</div>
+          <div onclick="selectLanguage('De')">De</div>
+        </div>
+      </div>
+
+      <div class="user-menu" onclick="toggleDropdown('user-dropdown')">
+        <span class="fas fa-user-circle"></span>
+        <div class="dropdown-menu" id="user-dropdown">
+          <div onclick="showLogin()">Login</div>
+          <div onclick="showCreateAccount()">Create Account</div>
+          <div id="logout-option" style="display: none;" onclick="logout()">Logout</div>
+        </div>
+      </div>
+
+      <div class="menu-icon" onclick="toggleDropdown('menu-dropdown')">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="dropdown-menu" id="menu-dropdown">
+          <div>Home</div>
+          <div>Our Company</div>
+          <div>Services and infos</div>
+          <div>Complaints</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slideshow-container">
+    <div class="slideshow">
+      <img src="image1.jpg" alt="Image 1">
+      <img src="image2.jpg" alt="Image 2">
+      <img src="image3.jpg" alt="Image 3">
+      <img src="image4.jpg" alt="Image 4">
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <a href="#">Terms and Policy</a>
+      <a href="#">Email</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Social Media</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown(id) {
+      var dropdown = document.getElementById(id);
+      if (dropdown.style.display === 'block') {
+        dropdown.style.display = 'none';
+      } else {
+        dropdown.style.display = 'block';
+      }
+    }
+
+    function selectLanguage(language) {
+      document.getElementById('selected-language').textContent = language;
+      document.getElementById('language-dropdown').style.display = 'none';
+    }
+
+    function showLogin() {
+      // Simulate login action, show appropriate elements
+      document.getElementById('user-dropdown').style.display = 'none'; // Hide user dropdown after action
+      document.getElementById('logout-option').style.display = 'block';
+      alert('Showing login form'); // Replace with actual login form display logic
+    }
+
+    function showCreateAccount() {
+      // Simulate create account action, show appropriate elements
+      document.getElementById('user-dropdown').style.display = 'none'; // Hide user dropdown after action
+      document.getElementById('logout-option').style.display = 'block';
+      alert('Showing create account form'); // Replace with actual create account form display logic
+    }
+
+    function logout() {
+      // Simulate logout action, show appropriate elements
+      document.getElementById('logout-option').style.display = 'none';
+      document.getElementById('user-dropdown').style.display = 'block'; // Show user dropdown after logout
+      alert('Logging out'); // Replace with actual logout logic
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.language-selector') && !event.target.closest('.language-selector')) {
+        var languageDropdown = document.getElementById('language-dropdown');
+        if (languageDropdown.style.display === 'block') {
+          languageDropdown.style.display = 'none';
+        }
+      }
+
+      if (!event.target.matches('.menu-icon') && !event.target.closest('.menu-icon')) {
+        var menuDropdown = document.getElementById('menu-dropdown');
+        if (menuDropdown.style.display === 'block') {
+          menuDropdown.style.display = 'none';
+        }
+      }
+
+      if (!event.target.matches('.user-menu') && !event.target.closest('.user-menu')) {
+        var userDropdown = document.getElementById('user-dropdown');
+        if (userDropdown.style.display === 'block') {
+          userDropdown.style.display = 'none';
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

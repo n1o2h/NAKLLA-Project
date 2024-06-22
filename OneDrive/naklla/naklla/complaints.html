@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transportation and Complaints</title>
+  <style>
+    :root {
+      --Dbrand: #0a0a3c;
+      --brand: #0093ff;
+      --Fbrand: #0093ff;
+      --Sbrand: #78c7ff;
+      --Tbrand: #cae9ff;
+      --nuture: #ecf0f4;
+      --dark: #141416;
+      --text-color: #000000;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--nuture);
+      color: var(--text-color);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: var(--nature);
+      border: 1px solid var(--Sbrand);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .transportation {
+      margin-bottom: 20px;
+    }
+
+    .transportation h2 {
+      color: var(--brand);
+    }
+
+    .transportation ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .transportation li {
+      margin-bottom: 10px;
+    }
+
+    .transportation input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .complaints {
+      margin-top: 20px;
+    }
+
+    .complaints h2 {
+      color: var(--brand);
+    }
+
+    .complaints textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      border: 1px solid var(--Sbrand);
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    .complaints button {
+      background-color: var(--brand);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .complaints button:hover {
+      background-color: var(--Fbrand);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Transportation and Complaints</h1>
+    <div class="transportation">
+      <h2>Choose Your Transportation:</h2>
+      <ul>
+        <li>
+          <input type="radio" id="taxi" name="transportation" value="taxi">
+          <label for="taxi">Taxi</label>
+        </li>
+        <li>
+          <input type="radio" id="bus" name="transportation" value="bus">
+          <label for="bus">Bus</label>
+        </li>
+        <li>
+          <input type="radio" id="privateBus" name="transportation" value="privateBus">
+          <label for="privateBus">Private Bus</label>
+        </li>
+        <li>
+          <input type="radio" id="schoolBus" name="transportation" value="schoolBus">
+          <label for="schoolBus">School Bus</label>
+        </li>
+      </ul>
+    </div>
+    <div class="complaints">
+      <h2>Write Your Complaint:</h2>
+      <textarea id="complaint" placeholder="Enter your complaint here..."></textarea>
+      <button id="submit">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    const transportation = document.querySelector('.transportation');
+    const complaints = document.querySelector('.complaints');
+    const submitButton = document.querySelector('#submit');
+
+    submitButton.addEventListener('click', () => {
+      const complaintText = document.querySelector('#complaint').value;
+      console.log(complaintText);
+    });
+  </script>
+</body>
+</html>
