@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enter Your Code</title>
+<style>
+    :root {
+        /* colors */
+        --primary-color: #0093ff;
+        --secondary-color: #78c7ff;
+        --background-color: #ecf0f4;
+        --text-color: #141416;
+        /* fonts */
+        --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        font-family: var(--font-family);
+        background-color: var(--background-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: var(#141416);
+        margin-bottom: 20px;
+    }
+
+    .input-container {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: var(--secondary-color);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Enter Your Code</h1>
+    <div class="input-container">
+        <input type="text" id="codeInput" placeholder="Enter your code">
+    </div>
+    <div class="button-container">
+        <button onclick="goToNext()">Next</button>
+    </div>
+</div>
+
+<script>
+    function goToNext() {
+        const code = document.getElementById('codeInput').value;
+        if (code) {
+            alert('Code entered: ' + code);
+            
+        } else {
+            alert('Please enter a code.');
+        }
+    }
+</script>
+</body>
+</html>
