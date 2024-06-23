@@ -141,6 +141,7 @@
 <body>
 <div class="container">
     <h1>login </h1>
+    <p id="errors"></p>
 
     <div class="input-section">
         <form id="accountForm" action="#" method="POST">
@@ -193,11 +194,12 @@
         let email = document.getElementById('emailInput').value;
         let password = document.getElementById('passwordInput').value;
 
-        
-        console.log({
-            'email': email,
-            'password':password
-        });
+        if (email==="user@example.com" && password==="password"){
+            location.replace('../index.html')
+        }else{
+            document.getElementById('errors').innerText="error in log in"
+            console.log('error')
+        }
     }
 </script>
 </body>

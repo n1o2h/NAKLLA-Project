@@ -141,6 +141,7 @@
 <body>
 <div class="container">
     <h1>Create Account</h1>
+    <p id="errors" ></p>
 
     <div class="input-section">
         <form id="accountForm" action="#" method="POST">
@@ -150,7 +151,7 @@
             <input type="password" id="passwordInput" name="passwordInput" required>
 
             <label for="passwordInput"> Confirme Password:</label>
-            <input type="password" id="passwordInput" name="passwordInput" required>
+            <input type="password" id="passwordConfirm" name="passwordInput" required>
             <!-- Hidden input field to store selected service -->
             <input type="hidden" id="selectedService" name="selectedService">
         </form>
@@ -194,6 +195,21 @@
         
         let email = document.getElementById('emailInput').value;
         let password = document.getElementById('passwordInput').value;
+        let confirmPwd = document.getElementById('passwordConfirm').value
+
+        if(email.length===0 || password.length ===0 || confirmPwd.length===0){
+            document.getElementById('errors').innerText="fill all fileds"
+            console.log('fill all fields ');
+            return ;
+        }else{
+            if(password !== confirmPwd){
+                document.getElementById('errors').innerText="confirm password deasent match"
+                console.log('confirm password deasent match ')
+            }else{
+                location.replace('./sign_in.html')
+            }
+        }
+
 
         
         console.log({
