@@ -112,19 +112,19 @@
 
         <div class="services">
             <div class="service" onclick="selectService('taxi')">
-                <img src="taxi_896980.png" alt="Taxi">
+                <img src="../assets/taxi_896980.png" alt="Taxi">
                 <span>Taxi</span>
             </div>
             <div class="service" onclick="selectService('bus')">
-                <img src="icons8-bus-100.png" alt="Bus">
+                <img src="../assets/icons8-bus-100.png" alt="Bus">
                 <span>Bus</span>
             </div>
             <div class="service" onclick="selectService('school-bus')">
-                <img src="school-bus.png" alt="School Bus">
+                <img src="../assets/school-bus.png" alt="School Bus">
                 <span>School Bus</span>
             </div>
             <div class="service" onclick="selectService('private-bus')">
-                <img src="icons8-bus-50.png" alt="Private Bus">
+                <img src="../assets/icons8-bus-50.png" alt="Private Bus">
                 <span>Private Bus</span>
             </div>
         </div>
@@ -138,7 +138,11 @@
 
 <script>
     function selectService(service) {
-        alert('You selected ' + service);
+        if (service==="private-bus" || service==="school-bus"){
+            location.replace('./codebar.html')
+        }else{
+            location.replace("./localisation.html")
+        }
         
     }
 

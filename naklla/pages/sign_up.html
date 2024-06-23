@@ -192,6 +192,7 @@
     }
 
     function goToNext() {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         
         let email = document.getElementById('emailInput').value;
         let password = document.getElementById('passwordInput').value;
@@ -201,21 +202,20 @@
             document.getElementById('errors').innerText="fill all fileds"
             console.log('fill all fields ');
             return ;
-        }else{
-            if(password !== confirmPwd){
-                document.getElementById('errors').innerText="confirm password deasent match"
-                console.log('confirm password deasent match ')
-            }else{
-                location.replace('./sign_in.html')
-            }
-        }
-
+        }else if(!email.match(emailPattern)){
+            document.getElementById('errors').innerText="verify syntax of email"
+        }else if(password !== confirmPwd){
+            document.getElementById('errors').innerText="confirm password deasent match"
+            console.log('confirm password deasent match ')
 
         
-        console.log({
-            'email': email,
-            'password':password
-        });
+        }else{
+            location.replace('./sign_in.html')
+            console.log({
+                'email': email,
+                'password':password
+            });
+        }
     }
 </script>
 </body>

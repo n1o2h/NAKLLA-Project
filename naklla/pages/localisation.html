@@ -1,58 +1,69 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-}
+  <head>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
 
-.container {
-  background-color: #e0f2f7;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 50px auto;
-  width: 350px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+    .container {
+      background-color: #e0f2f7;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 50px auto;
+      width: 350px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  margin-bottom: 15px;
-}
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
 
-button {
-  background-color: #333;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-}
+    button {
+      background-color: #333;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
 
-button:hover {
-  background-color: #555;
-}
-</style>
-</head>
-<body>
+    button:hover {
+      background-color: #555;
+    }
+    </style>
+  </head>
+  <body>
 
-<div class="container">
-  <h2>Find my route</h2>
-  <input type="text" placeholder="Your location">
-  <input type="text" placeholder="Destination">
-  <button>Find ></button>
-</div>
+    <div class="container">
+      <h2>Find my route</h2>
+      <input type="text" id="start_place" placeholder="Your location">
+      <input type="text" id="end_palce" placeholder="Destination">
+      <button onclick="search()"> Search </button>
+    </div>
+    <script>
+      function search() {
+        start_palce=document.getElementById('start_place').value
+        end_place=document.getElementById('end_place').value
+        if (start_palce.length!==0 || end_place.length!==0){
+          location.replace("./")
+        }
+        
+      }
 
-</body>
+    </script>
+
+  </body>
 </html>
