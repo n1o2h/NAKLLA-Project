@@ -88,7 +88,12 @@
     function goToNext() {
         const code = document.getElementById('codeInput').value;
         if (code) {
-            alert('Code entered: ' + code);
+            if (code==='12345'){
+                location.replace("./privatebus.html");
+            }else if (code==='00000'){
+                location.replace("./schoolbus.html");
+            }
+            //alert('Code entered: ' + code);
             
         } else {
             alert('Please enter a code.');
