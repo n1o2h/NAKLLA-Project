@@ -51,7 +51,7 @@
     <th>Available taxis</th>
     <th>Tariff</th>
   </tr>
-  <tr>
+  <tr onclick="info()">
     <td>1</td>
     <td></td>
   </tr>
@@ -112,6 +112,9 @@
 <button class="reserve-button" onclick="openReservationForm()">Reservation</button>
 
 <script>
+    function info(){
+      location.replace('./taxidriver.html')
+    }
     function openReservationForm() {
       location.replace('./reservation.html');
       //alert('Reservation form would open here.');
