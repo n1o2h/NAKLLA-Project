@@ -101,30 +101,79 @@
       background-color: var(--Sbrand);
       color: var(--text-color); /* Black text color */
     }
+    body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-    .slideshow-container {
+.slider-container {
+    width: 100%;
+    overflow: hidden; /* Hide overflowing images */
+    position: relative;
+    flex: 1; /* Allow slider to take up available space */
+    max-height: 50vh; /* Restrict the height of the slider */
+}
+
+.slider {
+    display: flex; /* Arrange images in a row */
+    width: calc(100vw * 5); /* Width is 5 times 100% of the viewport to accommodate 5 images */
+    animation: slide 20s linear infinite; /* Apply sliding animation */
+    height: 100%; /* Ensure the slider takes up the full height of the container */
+}
+
+.slider img {
+    width: 100vw; /* Each image takes up 100% of the viewport width */
+    height: 100%; /* Ensure images scale to the height of the container */
+    object-fit: cover; /* Ensure the images cover the container without distortion */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Start position */
+    }
+    100% {
+        transform: translateX(-80vw); /* End position after 5 images (4 + 1 duplicate) */
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0; /* Ensure footer does not shrink */
+}
+
+
+    /*.slideshow-container {
       width: 100%; /* Adjust to take the full width of the page */
-      max-width: 1200px; /* Set a maximum width for the slideshow */
-      height: 70vh;
+      /*max-width: 1200px; /* Set a maximum width for the slideshow */
+      /*height: 70vh;
       overflow: hidden;
       margin: 20px auto;
       position: relative;
       border: 2px solid var(--Sbrand);
     }
 
-    .slideshow {
+    /*.slideshow {
       display: flex;
       transition: transform 1s ease-in-out;
       width: 400%; /* Ensure all images fit side by side */
-    }
+   /* }
 
-    .slideshow img {
+    /*.slideshow img {
       width: 100%;
       height: 100%;
       object-fit: cover; /* Ensure the image covers the entire container */
-      vertical-align: middle;
+      /*vertical-align: middle;
       opacity: 0;
-    }
+    }*/
 
     .footer {
       background-color: var(--Dbrand);
@@ -153,7 +202,7 @@
 
   <div class="header">
     <div class="logo">
-      <img src="logo.png" alt="Logo" style="max-width: 100%;">
+      <img src="./assets/logo.png" alt="Logo" style="max-width: 100%;">
     </div>
 
     <div class="right-section">
@@ -191,20 +240,21 @@
   </div>
 
   <div class="slideshow-container">
-    <div class="slideshow">
-      <img src="./assets/image1.jpg" alt="Image 1">
-      <img src="./assets/image2.jpg" alt="Image 2">
-      <img src="./assets/image3.jpg" alt="Image 3">
-      <img src="./assets/image4.jpg" alt="Image 4">
+    <div class="slider">
+      <img src="./assets/image1.png" alt="Image 1">
+      <img src="./assets/image2.png" alt="Image 2">
+      <img src="./assets/image3.png" alt="Image 3">
+      <img src="./assets/image4.png" alt="Image 4">
+      <img src="./assets/image1.png" alt="Image 1">
     </div>
   </div>
 
   <div class="footer">
     <div>
       <a href="#">Terms and Policy</a>
-      <a href="#">Email</a>
-      <a href="#">Contact Us</a>
-      <a href="#">Social Media</a>
+      <a href="naklanakla@gmail.com">Email</a>
+      <a href="+21263334108">Contact Us</a>
+      <a href="@nakla.nakla">Social Media</a>
     </div>
   </div>
 
@@ -268,6 +318,7 @@
       }
     }
   </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
