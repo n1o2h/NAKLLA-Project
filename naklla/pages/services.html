@@ -140,9 +140,12 @@
     function selectService(service) {
         if (service==="private-bus" || service==="school-bus"){
             location.replace('./codebar.html')
-        }else{
-            location.replace("./localisation.html")
+        }else if (service==="bus"){
+            location.replace("./Naklla-LV/com-route.html");
+        }else {
+            location.replace("./location.html")
         }
+
         
     }
 

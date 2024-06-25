@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casabus Navigation Bar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .top-bar {
+            background-color: #4a4a4a;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar .social-icons img,
+        .top-bar .languages img {
+            width: 20px;
+            margin-left: 10px;
+        }
+        .top-bar .social-icons,
+        .top-bar .languages {
+            display: flex;
+            align-items: center;
+        }
+        .main-nav {
+            background-color: white;
+            color: #4a4a4a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .main-nav .logo img {
+            width: 100px;
+        }
+        .main-nav .nav-links a {
+            margin: 0 15px;
+            color: #4a4a4a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="social-icons">
+            <img src="facebook-icon.png" alt="Facebook">
+            <img src="instagram-icon.png" alt="Instagram">
+            <img src="youtube-icon.png" alt="YouTube">
+        </div>
+        <div class="languages">
+            <img src="morocco-flag.png" alt="Morocco">
+            <img src="france-flag.png" alt="France">
+            <img src="uk-flag.png" alt="UK">
+        </div>
+        <div class="top-links">
+            <a href="#">Règlement</a> |
+            <a href="#">Contactez-nous</a> |
+            <a href="#">Casabus opéré par Alsa</a> |
+            <a href="#">Alsa</a> |
+            <a href="#">F.A.Q</a>
+        </div>
+    </div>
+    <div class="main-nav">
+        <div class="logo">
+            <img src="casabus-logo.png" alt="Casabus Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#">Roulez avec nous</a>
+            <a href="#">Titres et tarifs</a>
+            <a href="#">À votre service</a>
+            <a href="#">Découvrez Casablanca</a>
+        </div>
+    </div>
+</body>
+</html>
