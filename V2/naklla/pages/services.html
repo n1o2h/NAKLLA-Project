@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Your Service</title>
+<style>
+    :root {
+        
+        --primary-color: #0093ff; 
+        --secondary-color: #78c7ff; 
+        --background-color: #ecf0f4;
+        --text-color: #141416;
+        
+        --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        font-family: var(--font-family);
+        background-color: var(--background-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+        background-color: white; 
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+
+    h1 {
+        color: var(#141416);
+        margin-bottom: 20px;
+    }
+
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .service {
+        width: 150px;
+        height: 150px;
+        background-color: var(--secondary-color);
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .service:hover {
+        background-color: var(--primary-color);
+    }
+
+    .service img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+
+    .service span {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    .button-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: var(--secondary-color);
+    }
+
+    .content-wrapper {
+        background-color: var(--background-color); 
+        padding: 20px; 
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+</style>
+</head>
+<body>
+<div class="content-wrapper">
+    <div class="container">
+        <h1>Choose Your Service</h1>
+
+        <div class="services">
+            <div class="service" onclick="selectService('taxi')">
+                <img src="../assets/taxi_896980.png" alt="Taxi">
+                <span>Taxi</span>
+            </div>
+            <div class="service" onclick="selectService('bus')">
+                <img src="../assets/icons8-bus-100.png" alt="Bus">
+                <span>Bus</span>
+            </div>
+            <div class="service" onclick="selectService('school-bus')">
+                <img src="../assets/school-bus.png" alt="School Bus">
+                <span>School Bus</span>
+            </div>
+            <div class="service" onclick="selectService('private-bus')">
+                <img src="../assets/icons8-bus-50.png" alt="Private Bus">
+                <span>Private Bus</span>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button onclick="goToNext()">Next</button>
+            <button onclick="ignoreSelection()">Ignore</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectService(service) {
+        if (service==="private-bus" || service==="school-bus"){
+            location.replace('./codebar.html')
+        }else if (service==="bus"){
+            location.replace("./Naklla-LV/com-route.html");
+        }else {
+            location.replace("./location.html")
+        }
+
+        
+    }
+
+    function goToNext() {
+        alert('Proceeding to next step...');
+         
+    }
+
+    function ignoreSelection() {
+        location.replace('../index.html')
+        //alert('Ignoring selection...');
+    }
+</script>
+</body>
+</html>

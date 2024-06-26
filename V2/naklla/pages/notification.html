@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Notification</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --Dbrand: #0a0a3c;
+            --brand: #0093ff;
+            --Fbrand: #0093ff;
+            --Sbrand: #78c7ff;
+            --Tbrand: #cae9ff;
+            --nuture: #ecf0f4;
+            --dark: #141416;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: var(--nuture);
+            color: var(--dark);
+        }
+
+        #notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background-color: var(--Dbrand);
+            color: var(--Tbrand);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out;
+            visibility: hidden;
+        }
+
+        #notification.show {
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        #notification p {
+            margin: 0;
+            padding-right: 10px;
+        }
+
+        #notification button {
+            background: none;
+            border: none;
+            color: var(--Tbrand);
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: var(--brand);
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--Sbrand);
+        }
+    </style>
+</head>
+<body>
+    <div id="notification">
+        <i class="fas fa-bell"></i>
+        <p id="notification-message"></p>
+        <button onclick="hideNotification()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <button onclick="notifyUser('Your transportation is late!')">Notify Late</button>
+    <button onclick="notifyUser('Your transportation is here!')">Notify Here</button>
+
+    <script>
+        function notifyUser(message) {
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+
+            notificationMessage.textContent = message;
+            notification.classList.add('show');
+
+            setTimeout(() => {
+                hideNotification();
+            }, 5000); // Auto-hide after 5 seconds
+        }
+
+        function hideNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.remove('show');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Information</title>
+    <style>
+        :root {
+            --Dbrand: #0a0a3c;
+            --brand: #009;
+            --Fbrand: #0093ff;
+            --Sbrand: #78c7ff;
+            --Tbrand: #cae9ff;
+            --nuture: #ecf0f4;
+            --dark: #141416;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--nuture);
+            color: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: var(--Tbrand);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: var(--Dbrand);
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .driver-card {
+            padding: 20px;
+        }
+
+        .driver-photo {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--brand);
+        }
+
+        p {
+            color: var(--dark);
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Driver Information</h1>
+        <div class="driver-card">
+            <img src="driver-photo.jpg" alt="Driver Photo" class="driver-photo">
+            <h2 id="driver-name">-----</h2>
+            <p id="driver-license">License: XYZ123456</p>
+            <p id="driver-age">Age: 35</p>
+            <p id="driver-experience">Experience: 10 years</p>
+            <p id="driver-location">Location: El jadida</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const driver = {
+                name: '-----',
+                license: 'XYZ123456',
+                age: 35,
+                experience: '10 years',
+                location: 'El jadida'
+            };
+
+            document.getElementById('driver-name').textContent = driver.name;
+            document.getElementById('driver-license').textContent = `License: ${driver.license}`;
+            document.getElementById('driver-age').textContent = `Age: ${driver.age}`;
+            document.getElementById('driver-experience').textContent = `Experience: ${driver.experience}`;
+            document.getElementById('driver-location').textContent = `Location: ${driver.location}`;
+        });
+    </script>
+</body>
+</html>
