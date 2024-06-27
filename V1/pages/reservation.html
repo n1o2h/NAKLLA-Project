@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxi Reservation</title>
+<style>
+  :root {
+    --primary-color: #0093ff; /* Adjusted primary color */
+    --secondary-color: #78c7ff; /* Adjusted secondary color */
+    --background-color: #ecf0f4;
+    --text-color: #141416;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+
+  h2 {
+    text-align: center;
+    color: var(--primary-color);
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+  }
+
+  .form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+
+  .button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .button:hover {
+    background-color: var(--secondary-color);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Taxi Reservation</h2>
+  <div class="form-group">
+    <label for="taxiNumber">Taxi Number</label>
+    <input type="text" id="taxiNumber" placeholder="Enter taxi number">
+  </div>
+  <button class="button" onclick="reserveTaxi()">Reserve</button>
+  <button class="button" style="margin-top: 10px;" onclick="payNow()">Pay</button>
+</div>
+
+<script>
+  function reserveTaxi() {
+    const taxiNumber = document.getElementById('taxiNumber').value;
+    if (taxiNumber) {
+      //alert('Taxi ' + taxiNumber + ' reserved successfully!');
+      location.replace("./paying.html");
+    } else {
+      alert('Please enter a taxi number.');
+    }
+  }
+
+  function payNow() {
+    //alert('Proceed to payment.');
+    location.replace("./paying.html");
+  }
+</script>
+
+</body>
+</html>

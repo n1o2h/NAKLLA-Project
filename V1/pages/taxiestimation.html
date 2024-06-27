@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxi and Road Journey Estimator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    position: relative;
+    animation: float 3s infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .results {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #007bff;
+  }
+
+  .results p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1 style="color: #007bff;">Taxi and Road Journey Estimator</h1>
+  <div class="results" id="results">
+    <p><strong>Taxi Arrival:</strong> <span id="taxiTime"></span> minutes</p>
+    <p><strong>Road Journey:</strong> <span id="roadTime"></span> minutes</p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const taxiTimeSpan = document.getElementById('taxiTime');
+    const roadTimeSpan = document.getElementById('roadTime');
+
+    setInterval(function() {
+      
+      const taxiTime = simulateTaxiTime();
+      const roadTime = simulateRoadTime();
+
+      taxiTimeSpan.textContent = taxiTime;
+      roadTimeSpan.textContent = roadTime;
+    }, 3000); 
+
+    function simulateTaxiTime() {
+      
+      return Math.floor(Math.random() * (20 - 5 + 1)) + 5;
+    }
+
+    function simulateRoadTime() {
+      
+      return Math.floor(Math.random() * (60 - 10 + 1)) + 10;
+    }
+  });
+</script>
+
+</body>
+</html>

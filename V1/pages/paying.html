@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Options</title>
+<style>
+  :root {
+    --primary-color: #0093ff; 
+    --secondary-color: #78c7ff; 
+    --background-color: #ecf0f4;
+    --text-color: #141416;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+
+  .button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Choose Payment Method</h2>
+  <button class="button" onclick="payWithBankCard()">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/bank-card-back-side.png" alt="Bank Card Icon">
+    Pay with Bank Card
+  </button>
+  <button class="button" onclick="payWithPayPal()">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/paypal.png" alt="PayPal Icon">
+    Pay with PayPal
+  </button>
+  <button class="button" onclick="payWithApplePay()">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/apple-pay.png" alt="Apple Pay Icon">
+    Pay with Apple Pay
+  </button>
+  <button class="button" onclick="payDirectly()">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/cash.png" alt="Cash Icon">
+    Pay Directly
+  </button>
+</div>
+
+<script>
+  function payWithBankCard() {
+    alert('You selected to pay with a bank card.');
+    location.replace("../index.html");
+   
+
+    function payWithPayPal() {
+      alert('You selected to pay with PayPal.');
+      location.replace("../index.html");
+    }
+
+    function payWithApplePay() {
+      alert('You selected to pay with Apple Pay.');
+      location.replace("../index.html");
+    
+    }
+
+    function payDirectly() {
+      alert('You selected to pay directly.');
+      location.replace("../index.html");
+    }
+  s}
+
+</script>
+</body>
+</html>
