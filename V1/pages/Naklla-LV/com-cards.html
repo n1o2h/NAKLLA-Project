@@ -44,47 +44,39 @@
             margin-right: 20px; 
             
         }
+        .logo {
+        max-width: 80px; /* Adjust the maximum width as needed */
+        margin-left: 20px;
+      }
+      .navbar {
+        position: relative;
+      }
     </style>
 </head>
 <body>
     
 
-    <!-- Footer Bar -->
-    <div class="footer-bar">
-        <div class="social-icons">
-            <a href="#" class="social-icon"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#" class="social-icon"><img src="instagram-icon.png" alt="Instagram"></a>
-            <a href="#" class="social-icon"><img src="youtube-icon.png" alt="YouTube"></a>
-        </div>
-        
-        <div class="footer-links">
-            <a href="#" class="footer-link">Règlement</a>
-            <a href="#" class="footer-link">Contactez-nous</a>
-        </div>
-    </div>
-    
     <!-- Navigation Menu -->
-    <nav>
+    <nav class="navbar">
         
         <ul class="menu">
-            <li><a href="#" class="logo"><img src="Logo.png" alt="Logo"></a></li>
+            <li> <div class="logo">
+                <img src="logo.png" alt="Logo" style="max-width: 100%;">
+              </div></li>
             <li><a href="com-route.html" >My route</a></li>
             <li class="dropdown">
                 <a href="#" class="dropbtn" style="color: #0093ff;">Tickets & Cards</a>
                 <div class="dropdown-content">
-                    <a href="com-tariff.html">Tariff</a>
-                    <a href="#">Triff by lines</a>
-                    <a href="#">Outlets</a>
+                    <a href="com-tariff.html">Triff by lines</a>
                     <a href="#" style="color: #0093ff;">Apply for your card</a>
                 </div>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">At your service</a>
                 <div class="dropdown-content">
-                    <a href="#">Report or claim a lost / found item</a>
+                    <a href="com-Lose.html">Report or claim a lost / found item</a>
                     <a href="com-reclamatio.html">Complaints, suggestions and requests for information</a>
-                    <a href="#">Comfort and safety</a>
-                    <a href="#">Your opinion matters to us</a>
+        
                     <a href="com-reaction.html">Quality of service</a>
                 </div>
             </li>
@@ -94,7 +86,7 @@
 
     <!-- Quality of Service Banner -->
     <div class="banner">
-        <img src="OIP1.jpg" alt="Casabus">
+        <img src="image3.png" alt="bus">
         <div class="overlay">
             <div class="text">Your card</div>
         </div>

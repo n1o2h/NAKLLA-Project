@@ -143,6 +143,7 @@
     </div>
 
     <script>
+       
         let map;
 
         function initMap() {
@@ -156,12 +157,14 @@
             const comment = document.getElementById('comment').value;
             const arrivalTime = document.getElementById('arrival-time').value;
             alert(`Arrival Time: ${arrivalTime}\nComment: ${comment}`);
-            location.replace("../index.html");
+            location.replace("services.html");
         });
 
         window.onload = function() {
             initMap();
         };
+       
+      
     </script>
     
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>

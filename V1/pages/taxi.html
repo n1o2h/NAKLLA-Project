@@ -22,7 +22,7 @@
     background-color: #cae9ff;
   }
 
-  .reserve-button {
+  .reserve-button, .ignore-button{
     background-color: #0093ff; 
     color: white;
     border: none;
@@ -37,9 +37,12 @@
     float: right; 
   }
 
-  .reserve-button:hover {
+  .reserve-button, .ignore-button:hover {
     background-color: #0077cc; 
   }
+  
+  
+        
 </style>
 </head>
 <body>
@@ -110,6 +113,7 @@
 </table>
 
 <button class="reserve-button" onclick="openReservationForm()">Reservation</button>
+<button class="ignore-button" onclick="window.location.href='services.html'"><b>Back</b></button>
 
 <script>
     function info(){

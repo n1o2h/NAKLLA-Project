@@ -130,7 +130,7 @@
         </div>
 
         <div class="button-container">
-            <button onclick="goToNext()">Next</button>
+            <!--<button onclick="goToNext()">Next</button>-->
             <button onclick="ignoreSelection()">Ignore</button>
         </div>
     </div>
@@ -142,8 +142,8 @@
             location.replace('./codebar.html')
         }else if (service==="bus"){
             location.replace("./Naklla-LV/com-route.html");
-        }else {
-            location.replace("./location.html")
+        }else if (service==="taxi") {
+            location.replace("./localisation.html");
         }
 
         
